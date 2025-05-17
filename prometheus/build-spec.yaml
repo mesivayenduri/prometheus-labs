@@ -29,7 +29,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - echo $DOCKER_REGISTRY_PASSWORD | docker login -u $DOCKER_REGISTRY_USERNAME --password-stdin $DOCKER_REGISTRY_URL
+      - echo $DOCKER_REGISTRY_PASSWORD | docker login -u $DOCKER_REGISTRY_USERNAME --password-stdin
       - echo Building the Docker image...
       - docker build -t $DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/$MY_APP_NAME:$MY_APP_VERSION prometheus/java-application/Dockefile
   post_build:
