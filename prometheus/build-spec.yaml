@@ -11,9 +11,19 @@ env:
 
 
 phases:
-  pre_build:
+  install:
     runtime-versions:
       java: corretto11
+    commands:
+      - echo Installing Docker...
+      - apt-get update
+      - apt-get install -y docker.io
+      - echo Docker installed successfully.
+  pre_build:
+    commands:
+      - echo Pre-build started on `date`
+      - echo "Prebuild stage"
+      - echo Pre-build completed on `date`
   build:
     commands:
       - echo Build started on `date`
