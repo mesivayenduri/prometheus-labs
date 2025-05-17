@@ -16,6 +16,7 @@ phases:
       java: corretto11
     commands:
       - echo Installing Docker...
+      - cat /etc/os-release
       - apt-get update
       - apt-get install ca-certificates curl
       - sudo install -m 0755 -d /etc/apt/keyrings
